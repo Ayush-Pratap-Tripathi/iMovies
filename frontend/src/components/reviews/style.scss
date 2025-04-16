@@ -1,0 +1,172 @@
+@import "../../mixins.scss";
+
+.reviewsContainer {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .reviewInputContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      input {
+        height: 50px;
+        width: 80%;
+        border: none;
+        background-color: black;
+        border-radius: 8px;
+        color: white;
+        padding-left: 10px;
+        font-size: 16px;
+        outline: none;
+      }
+      button {
+        width: 16%;
+        background: crimson;
+        border: none;
+        border-radius: 8px;
+        color: white;
+      }
+    }
+
+    .noReviews {
+      min-height: 200px;
+      color: var(--textColor);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      svg {
+        color: crimson;
+        font-size: 40px;
+      }
+    }
+
+    .reviews {
+      min-height: 200px;
+      max-height: 400px;
+      color: var(--textColor);
+      overflow: hidden;
+      .ReviewsList {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+
+          .profileImage {
+            background-color: crimson;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            margin-top: 4px;
+            color: white;
+          }
+
+          .reviewData {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            div {
+              display: flex;
+              align-items: center;
+              .name {
+                text-transform: capitalize;
+                color: var(--softTextColor);
+                font-size: 12px;
+              }
+              .moment {
+                color: var(--softTextColor);
+                font-size: 12px;
+              }
+              svg {
+                margin-top: 2px;
+              }
+            }
+
+            .dots {
+              position: absolute;
+              right: 0px;
+              top: 4px;
+              font-size: 16px;
+              @include md {
+                font-size: 20px;
+              }
+            }
+
+            .review {
+              font-size: 14px;
+            }
+            .reviewEditInputContainer {
+              border-radius: 6px;
+              height: 40px;
+              border: 2px solid crimson;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin-top: 4px;
+              .reviewEdit {
+                background-color: transparent;
+                border: none;
+                color: var(--textColor);
+                padding-left: 10px;
+                font-size: 14px;
+                outline: none;
+                width: 80%;
+              }
+              .save {
+                color: var(--textColor);
+                font-size: 14px;
+                margin-right: 10px;
+                cursor: pointer;
+                &:hover {
+                  color: crimson;
+                }
+              }
+            }
+
+            .reviewOptions {
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+              position: absolute;
+              right: 30px;
+              top: 4px;
+              list-style-type: none;
+              padding-left: 0;
+
+              li {
+                svg {
+                  cursor: pointer;
+                  font-size: 16px;
+                  color: var(--textColor);
+                  @include md {
+                    font-size: 20px;
+                  }
+                  &:hover {
+                    color: crimson;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

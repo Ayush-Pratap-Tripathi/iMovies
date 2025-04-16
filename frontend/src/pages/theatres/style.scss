@@ -1,0 +1,75 @@
+@import "../../mixins.scss";
+
+.theatresContainer {
+  background-color: var(--softBg);
+  padding-bottom: 40px;
+
+  .theatres {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+    list-style-type: none;
+
+    .theatre {
+      min-width: 300px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg);
+      border-radius: 10px;
+      padding: 10px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        .mask {
+          color: crimson;
+          font-size: 24px;
+        }
+      }
+      .right {
+        margin-top: -4px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        p {
+          font-size: 14px;
+          color: var(--softTextColor);
+          span {
+            color: var(--textColor);
+          }
+          @include md {
+            font-size: 16px;
+          }
+        }
+        .row {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          font-size: 16px;
+          .edit {
+            color: var(--textColor);
+            cursor: pointer;
+            &:hover {
+              color: crimson;
+            }
+          }
+          .cancel {
+            color: var(--textColor);
+            cursor: pointer;
+            &:hover {
+              color: crimson;
+            }
+          }
+        }
+      }
+    }
+  }
+}

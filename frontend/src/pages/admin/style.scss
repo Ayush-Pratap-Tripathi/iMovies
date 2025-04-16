@@ -1,0 +1,114 @@
+@import "../../mixins.scss";
+.adminContainer {
+  min-height: 100vh;
+  min-width: 300px;
+  padding-top: 60px;
+  background-color: var(--softBg);
+  color: var(--textColor);
+  padding-top: 60px;
+  padding-bottom: 20px;
+  .noShowsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 80vh;
+    svg {
+      font-size: 40px;
+    }
+  }
+  .wrapper {
+    h1 {
+      margin-bottom: 10px;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
+      span {
+        color: crimson;
+      }
+    }
+
+    .showsContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      @include md {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      li {
+        transition: all ease 0.3s;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        background-color: var(--bg);
+        border-radius: 10px;
+        padding: 20px;
+
+        &:hover {
+          box-shadow: var(--shadow);
+          svg {
+            color: crimson;
+          }
+        }
+
+        svg {
+          transition: all ease 0.3s;
+          margin-top: 4px;
+          font-size: 20px;
+          color: var(--textColor);
+        }
+        .right {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          button {
+            width: 100%;
+            background-color: transparent;
+            color: var(--textColor);
+            border: 2px solid crimson;
+            height: 30px;
+            padding: 0px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            svg {
+              z-index: 999;
+              color: var(--textColor);
+            }
+            &:hover {
+              background-color: crimson;
+              border: none;
+              color: white;
+              svg {
+                color: white;
+              }
+            }
+            @include md {
+              font-size: 16px;
+              height: 30px;
+            }
+          }
+          div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            span {
+              font-size: 14px;
+              font-weight: 500;
+              color: var(--softTextColor);
+            }
+            p {
+              font-size: 14px;
+              color: var(--textColor);
+            }
+          }
+        }
+      }
+    }
+  }
+}

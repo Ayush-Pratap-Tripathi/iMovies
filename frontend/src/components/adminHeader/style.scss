@@ -1,0 +1,155 @@
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  color: var(--textColor);
+  background-color: var(--bg);
+  position: fixed;
+  width: 100%;
+  transform: translateY(0);
+  z-index: 999;
+  min-width: 300px;
+  
+  h1 {
+    cursor: pointer;
+    width: 30%;
+    font-size: 20px;
+
+    span {
+      color: crimson;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 66px;
+    right: 10px;
+    width: 60px;
+    list-style-type: none;
+    padding-left: 0;
+    background-color: var(--bg);
+    border: 2px solid crimson;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    
+    li {
+      cursor: pointer;
+      svg {
+        font-size: 20px;
+        transition: all ease 0.4s;
+        &:hover {
+          color: crimson;
+        }
+      }
+    }
+  }
+
+  .menuButton {
+    position: relative;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    color: var(--textColor);
+    
+    svg {
+      font-size: 24px;
+      &:hover {
+        color: crimson;
+      }
+    }
+  }
+
+  .searchIconsContainerAdmin {
+    display: none;
+
+    .menuItems {
+      list-style-type: none;
+      padding-left: 0;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .searchItem {
+        svg {
+          font-size: 20px;
+          color: var(--textColor);
+        }
+      }
+
+      .item {
+        cursor: pointer;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+
+        svg {
+          transition: all ease 0.4s;
+          font-size: 20px;
+          color: var(--textColor);
+          &:hover {
+            color: crimson;
+          }
+        }
+      }
+    }
+  }
+
+  .logoutButton {
+    background-color: transparent;
+    border: none;
+    color: var(--textColor);
+    cursor: pointer;
+    
+    svg {
+      font-size: 20px;
+      transition: color 0.3s ease;
+      &:hover {
+        color: crimson;
+      }
+    }
+  }
+
+  /* Replace the @include md mixin with regular media queries */
+  @media (min-width: 768px) {
+    padding: 0px 30px;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .menuButton {
+      display: none;
+    }
+
+    .searchIconsContainerAdmin {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .searchIconsContainerAdmin .menuItems {
+      flex-direction: row;
+    }
+
+    .searchIconsContainerAdmin .menuItems .item svg {
+      font-size: 26px;
+    }
+  }
+}

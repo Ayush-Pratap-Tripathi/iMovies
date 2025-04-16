@@ -1,0 +1,178 @@
+@import "../../mixins.scss";
+
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  min-width: 400px;
+  background-color: var(--bg);
+  color: var(--textColor);
+  padding-top: 60px;
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0px auto;
+
+    .modal {
+      width: 100%;
+      max-width: 500px;
+      background-color: var(--softBg);
+      padding: 10px;
+      position: relative;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 600;
+        align-self: center;
+        margin-bottom: 10px;
+      }
+      .imageDetailsContainer {
+        display: flex;
+        flex-direction: column;
+
+        @include md {
+          flex-direction: row;
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+        .mediaImage {
+          align-self: center;
+          img {
+            border-radius: 10px;
+            height: 300px;
+            width: 200px;
+            object-fit: cover;
+            @include md {
+              height: 300px;
+              width: 200px;
+            }
+          }
+        }
+        .col {
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          max-width: 400px;
+          width: 200px;
+          @include md {
+            align-self: flex-start;
+          }
+          .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span {
+              font-weight: 500;
+              font-size: 14px;
+              color: var(--softTextColor);
+            }
+            p {
+              font-size: 14px;
+              font-weight: 400;
+              &::first-letter {
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          .ticketsContainer {
+            display: flex;
+            flex-direction: column;
+
+            .tickets {
+              display: flex;
+              span {
+                font-size: 14px;
+                color: var(--softTextColor);
+                font-weight: 500;
+              }
+              gap: 10px;
+              ul {
+                list-style-type: none;
+                padding-left: 0;
+                display: flex;
+                gap: 10px;
+
+                li {
+                  font-size: 14px;
+                  display: flex;
+                  align-items: center;
+                  gap: 2px;
+                  &:last-child {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        color: var(--textColor);
+        border: 2px solid crimson;
+        height: 30px;
+        padding: 0px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        &:hover {
+          background-color: crimson;
+          color: white;
+        }
+      }
+    }
+    .confirmation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--softBg);
+      border-radius: 10px;
+      padding: 20px;
+      @include md {
+        width: 400px;
+      }
+
+      P {
+        font-weight: 500;
+        font-size: 20px;
+        @include md {
+          font-size: 24px;
+        }
+      }
+
+      span {
+        cursor: pointer;
+        font-size: 14px;
+        color: crimson;
+      }
+
+      .success {
+        background-color: limegreen;
+        border-radius: 100%;
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          color: white;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

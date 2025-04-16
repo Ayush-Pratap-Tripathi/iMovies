@@ -1,0 +1,50 @@
+@import "../../mixins.scss";
+
+.show {
+  border-radius: 10px;
+  cursor: pointer;
+  .imageContainer {
+    border-radius: 10px;
+    position: relative;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .edit {
+      position: absolute;
+      right: 12px;
+      top: 6px;
+      background-color: white;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      svg {
+        color: crimson;
+      }
+    }
+    .image {
+      object-fit: cover;
+      border-radius: 10px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  div {
+    padding: 5px 10px;
+    .name {
+      color: var(--textColor);
+      font-weight: bold;
+      font-size: 16px;
+      width: 200px;
+    }
+    p {
+      color: var(--softTextColor);
+      font-size: 12px;
+    }
+  }
+}

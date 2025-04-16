@@ -1,0 +1,119 @@
+@import "../../mixins.scss";
+
+.addShow {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  color: var(--textColor);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--softBg);
+  h1 {
+    color: var(--textColor);
+  }
+  .showDetailsForm {
+    h3 {
+      text-decoration: underline;
+      text-decoration-color: crimson;
+      @include lg {
+        font-size: 26px;
+      }
+    }
+
+    background-color: var(--bg);
+    width: 80%;
+    max-width: 600px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    button {
+      cursor: pointer;
+      align-self: center;
+      height: 30px;
+      padding: 0px 10px;
+      border: none;
+      font-size: 12px;
+      border-radius: 6px;
+      background: crimson;
+      color: white;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+    }
+    select {
+      cursor: pointer;
+      border: none;
+      height: 40px;
+      padding: 0px 10px;
+      border-radius: 6px;
+      color: var(--textColor);
+      background-color: var(--softBg);
+      font-weight: 500;
+      outline: none;
+      &:focus {
+        border: 2px crimson solid;
+      }
+    }
+
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      div {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        p {
+          margin: 0;
+        }
+        span {
+          font-size: 20px;
+        }
+      }
+
+      label {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      input {
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+        }
+        cursor: pointer;
+        border: none;
+        height: 40px;
+        padding: 0px 10px;
+        border-radius: 6px;
+        color: var(--textColor);
+        background-color: var(--softBg);
+        font-weight: 500;
+        outline: none;
+
+        &:focus {
+          border: 2px crimson solid;
+        }
+
+        &::-webkit-input-placeholder {
+          color: var(--softTextColor);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

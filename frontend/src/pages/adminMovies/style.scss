@@ -1,0 +1,66 @@
+@import "../../mixins.scss";
+
+.adminMoviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  list-style-type: none;
+  background-color: var(--bg);
+  .adminShow {
+    border-radius: 10px;
+    cursor: pointer;
+    .imageContainer {
+      border-radius: 10px;
+      position: relative;
+      height: 300px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .edit {
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        svg {
+          color: crimson;
+        }
+      }
+      .cancel {
+        @extend .edit;
+        left: 16px;
+        top: 10px;
+      }
+      .image {
+        object-fit: cover;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    div {
+      padding: 5px 10px;
+      .name {
+        width: 200px;
+        color: var(--textColor);
+        font-weight: bold;
+        font-size: 16px;
+      }
+      p {
+        color: var(--softTextColor);
+        font-size: 12px;
+      }
+    }
+  }
+}

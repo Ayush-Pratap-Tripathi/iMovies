@@ -1,0 +1,90 @@
+@import "../../mixins.scss";
+.seatsPageContainer {
+  min-height: 100vh;
+  min-width: 300px;
+  padding-top: 60px;
+  background-color: var(--softBg);
+  color: var(--textColor);
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .seatType {
+      align-self: center;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .seats {
+      list-style-type: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      max-width: 500px;
+      .disable {
+        pointer-events: none; //This makes it not clickable
+        opacity: 0.3;
+        background-color: crimson;
+      }
+
+      li {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        color: var(--textColor);
+        border: 2px solid crimson;
+        border-radius: 4px;
+      }
+    }
+
+    .row {
+      margin: 20px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+      .col {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        p,
+        span {
+          font-size: 14px;
+          @include md {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .disable {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    button {
+      cursor: pointer;
+      align-self: center;
+      height: 30px;
+      padding: 0px 10px;
+      border: none;
+      font-size: 12px;
+      border-radius: 6px;
+      background: crimson;
+      color: white;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      @include md {
+        height: 46px;
+        font-size: 16px;
+        padding: 0px 16px;
+      }
+    }
+  }
+}

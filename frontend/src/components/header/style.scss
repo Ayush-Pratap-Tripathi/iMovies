@@ -1,0 +1,210 @@
+@import "../../mixins.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  color: var(--textColor);
+  background-color: var(--bg);
+  position: fixed;
+  width: 100%;
+  transform: translateY(0);
+  z-index: 999;
+  min-width: 300px;
+  @include md {
+    padding: 0px 30px;
+  }
+  h1 {
+    cursor: pointer;
+    width: 30%;
+    font-size: 20px;
+    @include md {
+      font-size: 30px;
+    }
+    span {
+      color: crimson;
+    }
+  }
+  .menu {
+    transition: all ease 0.4s;
+    position: absolute;
+    top: 66px;
+    right: 10px;
+    width: 60px;
+    list-style-type: none;
+    padding-left: 0;
+    background-color: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid crimson;
+    padding: 10px;
+    @include md {
+      display: none;
+    }
+    li {
+      cursor: pointer;
+      svg {
+        font-size: 20px;
+        transition: all ease 0.4s;
+        &:hover {
+          color: crimson;
+        }
+      }
+    }
+  }
+
+  .menuButton {
+    position: relative;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    color: var(--textColor);
+    svg {
+      font-size: 24px;
+      &:hover {
+        color: crimson;
+      }
+    }
+    @include md {
+      display: none;
+    }
+  }
+
+  .searchIconsContainer {
+    display: none;
+    max-width: 600px;
+    @include md {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+    }
+    .searchContainer {
+      width: 60%;
+      border-radius: 6px;
+      background-color: var(--softBg);
+      display: none;
+      @include md {
+        display: flex;
+      }
+
+      input {
+        width: 80%;
+        border: none;
+        background-color: transparent;
+        font-weight: 500;
+        outline: none;
+        padding: 0px 10px;
+        height: 40px;
+        color: var(--textColor);
+        border-radius: 6px;
+        &:focus {
+          border: 2px solid crimson;
+        }
+      }
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        svg {
+          font-size: 20px;
+          color: var(--textColor);
+        }
+      }
+    }
+    .menuItems {
+      list-style-type: none;
+      padding-left: 0;
+      display: flex;
+      max-width: 500px;
+      width: 30%;
+      justify-content: space-between;
+      align-items: center;
+
+      .searchItem {
+        svg {
+          font-size: 20px;
+          color: var(--textColor);
+        }
+      }
+
+      .item {
+        cursor: pointer;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+
+        svg {
+          transition: all ease 0.4s;
+          font-size: 20px;
+          color: var(--textColor);
+          &:hover {
+            color: crimson;
+          }
+          @include md {
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+.search {
+  position: relative;
+  transform: translateY(60px);
+  transition: all ease 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--softBg);
+  padding: 10px;
+  @include md {
+    display: none;
+  }
+  input {
+    width: 50%;
+    background-color: var(--bg);
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    color: var(--textColor);
+    font-size: 14px;
+    outline: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    &::placeholder {
+      color: var(--textColor);
+      opacity: 0.6;
+    }
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--softBg);
+    width: 40px;
+    border: none;
+    height: 40px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid crimson;
+    svg {
+      font-size: 20px;
+      color: var(--softTextColor);
+    }
+  }
+}
